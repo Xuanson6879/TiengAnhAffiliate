@@ -139,6 +139,26 @@
       border: 1px solid #fed7aa;
       color: var(--danger);
     }
+    .paths {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .path-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .path-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+    .path-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -184,7 +204,7 @@
     @media (max-width: 760px) {
       header, section, footer { padding: 30px 16px; }
       .hero { min-height: 72vh; }
-      .grid, .partner { grid-template-columns: 1fr; }
+      .grid, .partner, .paths { grid-template-columns: 1fr; }
       h1 { font-size: 39px; }
       .lead { font-size: 17px; }
       table { font-size: 14px; }
@@ -209,16 +229,33 @@
     <div class="wrap">
       <h2>Bạn đang ở nhóm nào?</h2>
       <div class="quiz">
-        <label class="option"><input type="radio" name="path" data-title="Lộ trình nước rút" data-content="quiz_nuoc_rut" data-result="Ưu tiên làm đề theo cụm dạng bài, xem lại lỗi sai ngay sau mỗi lượt và chọn gói ngắn để kiểm tra độ phù hợp trước. Không nên mua gói dài nếu học sinh chưa từng học online."> Còn dưới 4 tuần, cần luyện đề nước rút.</label>
-        <label class="option"><input type="radio" name="path" data-title="Lộ trình 1-3 tháng" data-content="quiz_1_3_thang" data-result="Nên chia thời gian thành hai phần: sửa lỗi nền thường gặp và luyện đề định kỳ. Gói 3 tháng thường hợp hơn gói 1 tháng nếu học sinh học đều."> Còn 1-3 tháng, cần vừa ôn lỗ hổng vừa luyện đề.</label>
-        <label class="option"><input type="radio" name="path" data-title="Lộ trình mất gốc" data-content="quiz_mat_goc" data-result="Không nên bắt đầu bằng việc cày đề khó. Hãy chọn nền tảng có câu dễ, lời giải rõ, theo dõi lỗi sai và chỉ tăng số lượng đề sau khi điểm nền ổn hơn."> Mất gốc, cần bắt đầu từ câu dễ và cấu trúc đề.</label>
-        <label class="option"><input type="radio" name="path" data-title="Lộ trình tăng điểm" data-content="quiz_tang_diem" data-result="Nếu đã có nền, hãy tập trung vào dạng câu mất điểm lặp lại như đọc hiểu, từ vựng theo ngữ cảnh và bẫy ngữ pháp trong đề."> Đang khá, cần tăng điểm phần đọc hiểu/ngữ pháp.</label>
-        <label class="option"><input type="radio" name="path" data-title="Lộ trình điểm cao" data-content="quiz_diem_cao" data-result="Nên chọn tài nguyên có nhiều đề khó, giới hạn thời gian làm bài và bảng theo dõi tiến độ. Hãy làm thử trước để xem độ khó có sát mục tiêu không."> Thi vào 10 chuyên hoặc cần điểm cao.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình nước rút vào 10" data-target="https://www.dethianh.com/vao-10" data-content="quiz_vao10_nuoc_rut" data-result="Ưu tiên làm đề theo cụm dạng bài, xem lại lỗi sai ngay sau mỗi lượt và chọn gói ngắn để kiểm tra độ phù hợp trước. Không nên mua gói dài nếu học sinh chưa từng học online."> Còn dưới 4 tuần, cần luyện đề vào 10 nước rút.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình vào 10 trong 1-3 tháng" data-target="https://www.dethianh.com/vao-10" data-content="quiz_vao10_1_3_thang" data-result="Nên chia thời gian thành hai phần: sửa lỗi nền thường gặp và luyện đề định kỳ. Gói 3 tháng thường hợp hơn gói 1 tháng nếu học sinh học đều."> Còn 1-3 tháng, cần vừa ôn lỗ hổng vừa luyện đề vào 10.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình mất gốc vào 10" data-target="https://www.dethianh.com/vao-10" data-content="quiz_vao10_mat_goc" data-result="Không nên bắt đầu bằng việc cày đề khó. Hãy chọn nền tảng có câu dễ, lời giải rõ, theo dõi lỗi sai và chỉ tăng số lượng đề sau khi điểm nền ổn hơn."> Mất gốc, cần bắt đầu từ câu dễ và cấu trúc đề vào 10.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình THPT tăng điểm" data-target="https://www.dethianh.com/thpt" data-content="quiz_thpt_tang_diem" data-result="Nếu đã có nền, hãy tập trung vào dạng câu mất điểm lặp lại như đọc hiểu, từ vựng theo ngữ cảnh và bẫy ngữ pháp trong đề."> Lớp 12 đang khá, cần tăng điểm phần đọc hiểu/ngữ pháp.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình điểm cao vào 10" data-target="https://www.dethianh.com/vao-10" data-content="quiz_vao10_diem_cao" data-result="Nên chọn tài nguyên có nhiều đề khó, giới hạn thời gian làm bài và bảng theo dõi tiến độ. Hãy làm thử trước để xem độ khó có sát mục tiêu không."> Thi vào 10 chuyên hoặc cần điểm cao.</label>
       </div>
       <div class="result" id="quizResult">
         <strong id="resultTitle">Gợi ý lộ trình</strong>
         <p id="resultText">Chọn một tình huống ở trên để xem gợi ý phù hợp.</p>
         <a class="button primary partner-link" id="quizCta" href="https://www.dethianh.com/?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing&utm_content=quiz" rel="nofollow sponsored">Làm thử theo lộ trình này</a>
+      </div>
+      <div class="paths" aria-label="Gợi ý lộ trình ôn thi">
+        <div class="path-card">
+          <h3>Vào 10 nước rút</h3>
+          <p>Phù hợp khi còn ít tuần, cần làm đề nhanh, xem lỗi sai và thử trước khi mua gói ôn.</p>
+          <a class="button secondary partner-link" href="https://www.dethianh.com/vao-10?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing&utm_content=static_vao10_nuoc_rut" rel="nofollow sponsored">Làm thử vào 10</a>
+        </div>
+        <div class="path-card">
+          <h3>Vào 10 mất gốc</h3>
+          <p>Phù hợp khi cần bắt đầu từ câu dễ, cấu trúc đề và theo dõi tiến độ thay vì tải PDF rời rạc.</p>
+          <a class="button secondary partner-link" href="https://www.dethianh.com/vao-10?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing&utm_content=static_vao10_mat_goc" rel="nofollow sponsored">Xem đề vào 10</a>
+        </div>
+        <div class="path-card">
+          <h3>THPT nước rút</h3>
+          <p>Phù hợp với học sinh lớp 12 cần luyện đề, kiểm tra lỗi ngữ pháp/đọc hiểu và theo dõi điểm.</p>
+          <a class="button secondary partner-link" href="https://www.dethianh.com/thpt?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing&utm_content=static_thpt_nuoc_rut" rel="nofollow sponsored">Làm thử THPT</a>
+        </div>
       </div>
     </div>
   </section>
@@ -289,7 +326,11 @@
       input.addEventListener('change', () => {
         resultTitle.textContent = input.dataset.title;
         resultText.textContent = input.dataset.result;
-        const quizUrl = new URL(quizCta.href);
+        const quizUrl = new URL(input.dataset.target);
+        quizUrl.searchParams.set('via', 'sonhocanh');
+        quizUrl.searchParams.set('utm_source', 'github_pages');
+        quizUrl.searchParams.set('utm_medium', 'referral');
+        quizUrl.searchParams.set('utm_campaign', campaign);
         quizUrl.searchParams.set('utm_content', input.dataset.content);
         quizCta.href = quizUrl.toString();
         result.style.display = 'block';
