@@ -248,7 +248,7 @@
       <div class="partner-box">
         <h3>Bắt đầu bằng bài làm thử</h3>
         <p>Làm thử trước để xem dạng đề, giao diện luyện tập và cách theo dõi điểm có phù hợp với bạn không.</p>
-        <a class="button primary" href="https://www.dethianh.com/?via=sonhocanh&utm_source=YOURDOMAIN&utm_medium=referral&utm_campaign=exam_prep_landing" rel="nofollow sponsored">Làm thử miễn phí</a>
+        <a class="button primary partner-link" href="https://www.dethianh.com/?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing" rel="nofollow sponsored">Làm thử miễn phí</a>
       </div>
     </div>
   </section>
@@ -275,6 +275,18 @@
       input.addEventListener('change', () => {
         result.style.display = 'block';
       });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const campaign = params.get('utm_campaign') || 'exam_prep_landing';
+    const content = params.get('utm_content') || 'direct';
+    document.querySelectorAll('.partner-link').forEach((link) => {
+      const url = new URL(link.href);
+      url.searchParams.set('utm_source', 'github_pages');
+      url.searchParams.set('utm_medium', 'referral');
+      url.searchParams.set('utm_campaign', campaign);
+      url.searchParams.set('utm_content', content);
+      link.href = url.toString();
     });
   </script>
 </body>
