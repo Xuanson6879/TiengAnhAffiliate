@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chọn cách luyện đề Tiếng Anh trước kỳ thi</title>
+  <meta name="description" content="Checklist chọn lộ trình luyện đề Tiếng Anh vào 10 và THPT online theo thời gian còn lại, mức hiện tại và mục tiêu điểm.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5f697a;
+      --line: #d9dee8;
+      --paper: #ffffff;
+      --soft: #f4f7fb;
+      --accent: #176b5d;
+      --accent-2: #e6a23c;
+      --danger: #b54708;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    header, section, footer {
+      padding: 40px 20px;
+    }
+    .wrap {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.96), rgba(255,255,255,.78)),
+        url("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 720px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    a.button, button {
+      border: 0;
+      border-radius: 6px;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+    }
+    .primary { background: var(--accent); color: #fff; }
+    .secondary { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+    .notice {
+      max-width: 760px;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .band { background: var(--soft); border-block: 1px solid var(--line); }
+    h2 {
+      margin: 0 0 18px;
+      font-size: 30px;
+      letter-spacing: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .quiz {
+      display: grid;
+      gap: 10px;
+      max-width: 780px;
+    }
+    label.option {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .result {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 8px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: var(--danger);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 13px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { background: #edf3f1; }
+    tr:last-child td { border-bottom: 0; }
+    .partner {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .partner-box {
+      background: #102820;
+      color: #fff;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .partner-box p { color: #dce8e4; }
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+    footer {
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+    @media (max-width: 760px) {
+      header, section, footer { padding: 30px 16px; }
+      .hero { min-height: 72vh; }
+      .grid, .partner { grid-template-columns: 1fr; }
+      h1 { font-size: 39px; }
+      .lead { font-size: 17px; }
+      table { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Luyện đề Tiếng Anh vào 10 và THPT</p>
+      <h1>Chọn đúng cách luyện đề Tiếng Anh trước kỳ thi</h1>
+      <p class="lead">Dành cho học sinh lớp 9 và lớp 12 cần ôn theo mục tiêu điểm, thời gian còn lại và mức hiện tại. Xem checklist, chọn lộ trình, rồi làm thử trước khi mua gói ôn online.</p>
+      <div class="actions">
+        <a class="button primary" href="#checklist">Làm checklist 2 phút</a>
+        <a class="button secondary" href="#partner">Xem gói luyện đề</a>
+      </div>
+      <p class="notice">Một số liên kết trên trang là liên kết đối tác. Nếu bạn mua qua link, chúng tôi có thể nhận hoa hồng. Giá bạn trả không thay đổi.</p>
+    </div>
+  </header>
+
+  <section id="checklist">
+    <div class="wrap">
+      <h2>Bạn đang ở nhóm nào?</h2>
+      <div class="quiz">
+        <label class="option"><input type="radio" name="path"> Còn dưới 4 tuần, cần luyện đề nước rút.</label>
+        <label class="option"><input type="radio" name="path"> Còn 1-3 tháng, cần vừa ôn lỗ hổng vừa luyện đề.</label>
+        <label class="option"><input type="radio" name="path"> Mất gốc, cần bắt đầu từ câu dễ và cấu trúc đề.</label>
+        <label class="option"><input type="radio" name="path"> Đang khá, cần tăng điểm phần đọc hiểu/ngữ pháp.</label>
+        <label class="option"><input type="radio" name="path"> Thi vào 10 chuyên hoặc cần điểm cao.</label>
+      </div>
+      <div class="result" id="quizResult">Nếu bạn đang nước rút, ưu tiên nền tảng có nhiều đề, bảng điểm theo lần làm và khả năng làm thử trước. Nếu mất gốc, không nên chỉ cày đề; hãy ôn lỗi nền song song.</div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Khi nào nên dùng web luyện đề?</h2>
+      <div class="grid">
+        <div class="card"><h3>Cần làm nhiều đề</h3><p>Phù hợp khi thời gian còn ít và cần làm quen cấu trúc đề thật nhanh.</p></div>
+        <div class="card"><h3>Cần biết lỗi lặp lại</h3><p>Bảng điểm và lịch sử làm bài giúp thấy dạng câu đang mất điểm nhiều nhất.</p></div>
+        <div class="card"><h3>Cần học linh hoạt</h3><p>Học sinh có thể luyện sau giờ học chính, phụ huynh dễ theo dõi tiến độ hơn.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Chọn gói theo tình huống</h2>
+      <table>
+        <thead><tr><th>Nhu cầu</th><th>Cách chọn</th></tr></thead>
+        <tbody>
+          <tr><td>Nước rút trước kỳ thi</td><td>Gói ngắn, tập trung luyện đề và phân tích lỗi sai.</td></tr>
+          <tr><td>Còn vài tháng</td><td>Gói 3 tháng để vừa sửa lỗ hổng vừa luyện đề.</td></tr>
+          <tr><td>Ôn cả năm</td><td>Gói dài hơn nếu học sinh có kỷ luật tự học đều.</td></tr>
+          <tr><td>Mất gốc</td><td>Chọn tài nguyên có câu dễ, lời giải rõ và theo dõi tiến độ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="partner" class="band">
+    <div class="wrap partner">
+      <div>
+        <h2>Gợi ý nền tảng luyện đề</h2>
+        <p>DethiAnh là nền tảng luyện đề Tiếng Anh online cho học sinh thi vào 10 và tốt nghiệp THPT. Điểm đáng chú ý là có kho đề, chế độ luyện tập/thi thử và bảng điểm theo dõi tiến độ.</p>
+        <p>Không nên mua chỉ vì quảng cáo. Hãy làm thử, xem dạng đề có phù hợp, rồi mới quyết định.</p>
+      </div>
+      <div class="partner-box">
+        <h3>Bắt đầu bằng bài làm thử</h3>
+        <p>Thay `YOUR_DETHIANH_AFFILIATE_CODE` bằng mã affiliate của bạn trước khi chạy ads.</p>
+        <a class="button primary" href="https://dethianh.com/?via=YOUR_DETHIANH_AFFILIATE_CODE&utm_source=YOURDOMAIN&utm_medium=referral&utm_campaign=exam_prep_landing" rel="nofollow sponsored">Xem DethiAnh</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <h2>Câu hỏi thường gặp</h2>
+      <details><summary>Trang này có phải DethiAnh không?</summary><p>Không. Đây là trang hướng dẫn độc lập. Chúng tôi có thể nhận hoa hồng nếu bạn mua qua link đối tác.</p></details>
+      <details><summary>Có cam kết tăng điểm không?</summary><p>Không. Kết quả phụ thuộc vào nền tảng hiện tại, thời gian học và cách học. Trang này chỉ giúp bạn chọn tài nguyên và lộ trình hợp lý hơn.</p></details>
+      <details><summary>Có nên mua gói dài ngay không?</summary><p>Nếu chưa chắc học sinh có hợp cách học online hay không, nên làm thử trước hoặc bắt đầu bằng gói ngắn.</p></details>
+      <details><summary>Nên luyện đề hay học lại ngữ pháp?</summary><p>Nếu điểm hiện tại quá thấp hoặc sai nhiều câu cơ bản, nên học lại lỗi nền song song với luyện đề. Nếu đã có nền, luyện đề và phân tích lỗi sẽ hiệu quả hơn.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Thông tin trên trang chỉ có mục đích tham khảo. Không có cam kết kết quả thi. Một số liên kết có thể là liên kết đối tác.</p>
+    </div>
+  </footer>
+
+  <script>
+    const result = document.getElementById('quizResult');
+    document.querySelectorAll('input[name="path"]').forEach((input) => {
+      input.addEventListener('change', () => {
+        result.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
