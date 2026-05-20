@@ -209,13 +209,17 @@
     <div class="wrap">
       <h2>Bạn đang ở nhóm nào?</h2>
       <div class="quiz">
-        <label class="option"><input type="radio" name="path"> Còn dưới 4 tuần, cần luyện đề nước rút.</label>
-        <label class="option"><input type="radio" name="path"> Còn 1-3 tháng, cần vừa ôn lỗ hổng vừa luyện đề.</label>
-        <label class="option"><input type="radio" name="path"> Mất gốc, cần bắt đầu từ câu dễ và cấu trúc đề.</label>
-        <label class="option"><input type="radio" name="path"> Đang khá, cần tăng điểm phần đọc hiểu/ngữ pháp.</label>
-        <label class="option"><input type="radio" name="path"> Thi vào 10 chuyên hoặc cần điểm cao.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình nước rút" data-content="quiz_nuoc_rut" data-result="Ưu tiên làm đề theo cụm dạng bài, xem lại lỗi sai ngay sau mỗi lượt và chọn gói ngắn để kiểm tra độ phù hợp trước. Không nên mua gói dài nếu học sinh chưa từng học online."> Còn dưới 4 tuần, cần luyện đề nước rút.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình 1-3 tháng" data-content="quiz_1_3_thang" data-result="Nên chia thời gian thành hai phần: sửa lỗi nền thường gặp và luyện đề định kỳ. Gói 3 tháng thường hợp hơn gói 1 tháng nếu học sinh học đều."> Còn 1-3 tháng, cần vừa ôn lỗ hổng vừa luyện đề.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình mất gốc" data-content="quiz_mat_goc" data-result="Không nên bắt đầu bằng việc cày đề khó. Hãy chọn nền tảng có câu dễ, lời giải rõ, theo dõi lỗi sai và chỉ tăng số lượng đề sau khi điểm nền ổn hơn."> Mất gốc, cần bắt đầu từ câu dễ và cấu trúc đề.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình tăng điểm" data-content="quiz_tang_diem" data-result="Nếu đã có nền, hãy tập trung vào dạng câu mất điểm lặp lại như đọc hiểu, từ vựng theo ngữ cảnh và bẫy ngữ pháp trong đề."> Đang khá, cần tăng điểm phần đọc hiểu/ngữ pháp.</label>
+        <label class="option"><input type="radio" name="path" data-title="Lộ trình điểm cao" data-content="quiz_diem_cao" data-result="Nên chọn tài nguyên có nhiều đề khó, giới hạn thời gian làm bài và bảng theo dõi tiến độ. Hãy làm thử trước để xem độ khó có sát mục tiêu không."> Thi vào 10 chuyên hoặc cần điểm cao.</label>
       </div>
-      <div class="result" id="quizResult">Nếu bạn đang nước rút, ưu tiên nền tảng có nhiều đề, bảng điểm theo lần làm và khả năng làm thử trước. Nếu mất gốc, không nên chỉ cày đề; hãy ôn lỗi nền song song.</div>
+      <div class="result" id="quizResult">
+        <strong id="resultTitle">Gợi ý lộ trình</strong>
+        <p id="resultText">Chọn một tình huống ở trên để xem gợi ý phù hợp.</p>
+        <a class="button primary partner-link" id="quizCta" href="https://www.dethianh.com/?via=sonhocanh&utm_source=github_pages&utm_medium=referral&utm_campaign=exam_prep_landing&utm_content=quiz" rel="nofollow sponsored">Làm thử theo lộ trình này</a>
+      </div>
     </div>
   </section>
 
@@ -278,8 +282,16 @@
 
   <script>
     const result = document.getElementById('quizResult');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultText = document.getElementById('resultText');
+    const quizCta = document.getElementById('quizCta');
     document.querySelectorAll('input[name="path"]').forEach((input) => {
       input.addEventListener('change', () => {
+        resultTitle.textContent = input.dataset.title;
+        resultText.textContent = input.dataset.result;
+        const quizUrl = new URL(quizCta.href);
+        quizUrl.searchParams.set('utm_content', input.dataset.content);
+        quizCta.href = quizUrl.toString();
         result.style.display = 'block';
       });
     });
